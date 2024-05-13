@@ -8,6 +8,7 @@ import { Menus } from '../components/menus/menus';
  */
 export class Layout extends TypeDiv {
   className: 'Layout';
+  routerView: RouterView
   constructor() {
     super();
     this.className = 'Layout';

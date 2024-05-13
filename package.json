@@ -74,7 +74,7 @@
   "dependencies": {
     "@type-dom/framework": "^0.1.3",
     "@type-dom/svgs": "^0.1.1",
-    "@type-dom/ui": "0.0.3",
+    "@type-dom/ui": "^0.0.4",
     "@type-dom/utils": "^0.0.7"
   },
   "repository": {

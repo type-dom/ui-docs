@@ -11,8 +11,17 @@ import { Example } from '../../components/example/example';
 import { TdScrollbarBasicExample } from '../../examples/basic/scrollbar/basic';
 
 export class ScrollbarWrapper extends TypeDiv {
-  className: 'ScrollbarWrapper';
+  className = 'ScrollbarWrapper';
   private sourceData: XProxy<IJsonData>;
+
+  constructor() {
+    super();
+    this.sourceData = createProxy({
+      basicSource: '',
+      // verticalSource: '',
+      // sizeSource: '',
+    });
+  }
 
   mounted() {
     this.sourceData = createProxy({

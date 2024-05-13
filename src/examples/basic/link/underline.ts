@@ -5,6 +5,7 @@ export class LinkUnderlineExample extends TypeDiv {
   className: 'LinkUnderlineExample';
   constructor() {
     super();
+    this.className = 'LinkUnderlineExample';
     this.addChildren(
       new TdLink({
         text: 'Without Underline',

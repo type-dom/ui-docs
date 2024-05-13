@@ -36,20 +36,20 @@ export class FormAlignExample extends TypeDiv {
           },
         ],
         events: {
-          click: (evt, element: TdRadioGroup) => {
+          click: (evt, element) => {
             console.log('radio-group event ', evt);
             console.log('element.modelValue is ', element?.modelValue);
             if (formRef.value && formRef.value instanceof TdForm) {
-              formRef.value.children.forEach((child) => {
+              formRef.value.children.forEach(child => {
                 if (child instanceof TdFormItem) {
-                  if (element.modelValue === 'top') {
+                  if (element?.modelValue === 'top') {
                     child.setLabelPosition('left');
                     child.setStyleObj({
                       display: 'block',
                     });
                   } else {
                     child.setLabelPosition(
-                      element.modelValue as ILabelPosition
+                      element?.modelValue as ILabelPosition
                     );
                     child.setStyleObj({
                       display: 'flex',

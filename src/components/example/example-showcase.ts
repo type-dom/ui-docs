@@ -4,7 +4,7 @@ import { Example } from './example';
 
 export class ExampleShowcase extends TypeDiv {
   className: 'ExampleShowcase';
-  parent: Example;
+  parent!: Example;
   constructor(config?: ITypeConfig) {
     super();
     this.className = 'ExampleShowcase';

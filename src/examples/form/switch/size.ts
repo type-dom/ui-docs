@@ -3,7 +3,7 @@ import { TdSwitch } from '@type-dom/ui';
 
 export class SwitchSizeExample extends TypeDiv {
   className: 'SwitchSizeExample';
-  private sourceData: XProxy<IJsonData>;
+  // private sourceData: XProxy<IJsonData>;
   constructor() {
     super();
     this.className = 'SwitchSizeExample';

@@ -4,7 +4,8 @@ import { TypeComponent, RouterView, Div } from '@type-dom/framework';
  */
 export class FormView extends TypeComponent {
   className: 'FormView';
-  parent: RouterView;
+  parent?: RouterView;
+  routerView: RouterView
   constructor() {
     super();
     console.log('FormView constructor . ');

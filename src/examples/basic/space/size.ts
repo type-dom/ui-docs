@@ -1,12 +1,12 @@
 import { Div, StyleAlignItems, TypeDiv } from '@type-dom/framework';
-import { RadioGroup, TdSpace } from '@type-dom/ui';
+import { TdRadioGroup, TdSpace } from '@type-dom/ui';
 
 export class SpaceSizeExample extends TypeDiv {
   className: 'SpaceSizeExample';
   constructor() {
     super();
     this.className = 'SpaceSizeExample';
-    const radioGroup = new RadioGroup({
+    const radioGroup = new TdRadioGroup({
       name: 'radio-group',
       options: [
         {
@@ -26,13 +26,13 @@ export class SpaceSizeExample extends TypeDiv {
         },
       ],
       events: {
-        click: (evt, element: RadioGroup) => {
+        click: (evt, element?: TdRadioGroup) => {
           //   todo
           console.log('click self is ', element);
           // 1. 获取到当前选中的值
-          const value = element.value as string | number;
+          const value = element?.modelValue as string | number;
           // 2. 设置间距大小
-          (element.nextSibling as TdSpace).setSize(value);
+          (element?.nextSibling as TdSpace).setSize(value);
         }
       }
     })
