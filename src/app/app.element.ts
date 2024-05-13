@@ -18,7 +18,7 @@ export class AppElement extends HTMLElement {
     appRoot.render();
     console.log('appRoot is ', appRoot);
     console.log('appRoot.findNode(\'Layout\') is ', appRoot.findNode('Layout'));
-    const buff = [];
+    const buff: string[] = [];
     appRoot.dump(buff);
     // console.log('appRoot.dump() buff.join("") is ', buff.join(''));
   }

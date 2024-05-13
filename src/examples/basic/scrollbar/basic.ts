@@ -1,6 +1,5 @@
 import { P, TypeDiv } from '@type-dom/framework';
-import { $colorPrimary, $colors } from '@type-dom/ui';
-import { TdScrollbar } from '../../../../../../libs/ui/src/components/basic/td-scrollbar/td-scrollbar.class';
+import { $colorPrimary, $colors, TdScrollbar } from '@type-dom/ui';
 
 export class TdScrollbarBasicExample extends TypeDiv {
   className: 'ScrollbarBasicExample';

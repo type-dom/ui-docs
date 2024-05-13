@@ -79,8 +79,8 @@ export class FormBasicExample extends TypeDiv {
                 type: 'primary',
                 styleObj: {},
                 events: {
-                  click: (evt, comp) => {
-                    console.log('click', evt, comp);
+                  click: (evt, element: TdButton) => {
+                    console.log('click', evt, element);
                     // evt.preventDefault();
                     formModel1.activityName.setValue('activityName1');
                     console.log('formModel1 original is  ', formModel1.toJsonData());

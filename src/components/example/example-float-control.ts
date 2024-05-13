@@ -8,9 +8,9 @@ import { ElCaretTopSvg } from '@type-dom/svgs';
 
 export class ExampleFloatControl extends TypeDiv {
   className: 'ExampleFloatControl';
-  parent: Example;
+  parent!: Example;
 
-  constructor(config?: ITypeConfig) {
+  constructor(config: ITypeConfig) {
     super();
     this.className = 'ExampleFloatControl';
     this.addAttrName('example-float-control');
@@ -60,9 +60,9 @@ export class ExampleFloatControl extends TypeDiv {
   initEvents() {
     this.addEvents({
       click: () => {
+        // 隐藏 代码
         this.hide();
         this.parent.sourceWrapper.hide();
-      //   todo 隐藏 代码
       }
     })
   }

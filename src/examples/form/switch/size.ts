@@ -1,9 +1,9 @@
-import { Br, createProxy, Div, IJsonData, TypeDiv, XProxy } from '@type-dom/framework';
+import { Br, TypeDiv } from '@type-dom/framework';
 import { TdSwitch } from '@type-dom/ui';
 
 export class SwitchSizeExample extends TypeDiv {
   className: 'SwitchSizeExample';
-  private sourceData: XProxy<IJsonData>;
+  // private sourceData: XProxy<IJsonData>;
   constructor() {
     super();
     this.className = 'SwitchSizeExample';

@@ -1,15 +1,12 @@
 import {
-  Br,
   createProxy,
   Div,
   Head,
   IJsonData,
   P,
-  reactive,
-  ref,
   RouterView,
   TypeDiv,
-  XProxy
+  XProxy,
 } from '@type-dom/framework';
 import { Example } from '../../components/example/example';
 import { FormInputBasicExample } from '../../examples/form/input/basic';
@@ -20,11 +17,13 @@ import { FormInputPasswordExample } from '../../examples/form/input/password';
 import { FormInputIconExample } from '../../examples/form/input/icon';
 import { FormInputTextareaExample } from '../../examples/form/input/textarea';
 import { FormInputSizeExample } from '../../examples/form/input/size';
+
 export class InputWrapper extends TypeDiv {
   className: 'InputWrapper';
   parent?: RouterView;
-  title: 'Here is a input wrapper ';
+  title = 'Here is a input wrapper ';
   private sourceData: XProxy<IJsonData>;
+
   constructor() {
     super();
     console.error('InputWrapper constructor . ');
@@ -40,8 +39,8 @@ export class InputWrapper extends TypeDiv {
       }),
       new P({
         text: '通过鼠标或键盘输入字符',
-      }),
-    )
+      })
+    );
     // this.setContext(true);
     this.sourceData = createProxy({
       basicSource: '',
@@ -100,53 +99,54 @@ export class InputWrapper extends TypeDiv {
     // // @ts-ignore
     // this.data.user.name = 'Jane';
   }
+
   mounted() {
     console.log('InputWrapper mounted . ');
     fetch('./examples/form/input/basic.ts')
-      .then(res => res.text())
-      .then(text => {
+      .then((res) => res.text())
+      .then((text) => {
         console.log('text is ', text);
         this.sourceData.basicSource.setValue(text);
       });
     fetch('./examples/form/input/disabled.ts')
-      .then(res => res.text())
-      .then(text => {
+      .then((res) => res.text())
+      .then((text) => {
         console.log('text is ', text);
         this.sourceData.disabledSource.setValue(text);
       });
     fetch('./examples/form/input/clearable.ts')
-      .then(res => res.text())
-      .then(text => {
+      .then((res) => res.text())
+      .then((text) => {
         console.log('text is ', text);
         this.sourceData.clearableSource.setValue(text);
       });
     fetch('./examples/form/input/format.ts')
-      .then(res => res.text())
-      .then(text => {
+      .then((res) => res.text())
+      .then((text) => {
         console.log('text is ', text);
         this.sourceData.formatSource.setValue(text);
       });
     fetch('./examples/form/input/password.ts')
-      .then(res => res.text())
-      .then(text => {
+      .then((res) => res.text())
+      .then((text) => {
         console.log('text is ', text);
         this.sourceData.passwordSource.setValue(text);
       });
     fetch('./examples/form/input/icon.ts')
-      .then(res => res.text())
-      .then(text => {
+      .then((res) => res.text())
+      .then((text) => {
         console.log('text is ', text);
         this.sourceData.iconSource.setValue(text);
       });
     fetch('./examples/form/input/textarea.ts')
-      .then(res => res.text())
-      .then(text => {
+      .then((res) => res.text())
+      .then((text) => {
         console.log('text is ', text);
         this.sourceData.textareaSource.setValue(text);
       });
     fetch('./examples/form/input/size.ts')
-      .then(res => res.text())
-      .then(text => {
+      .then((res) => res.text())
+      .then((text) => {
         console.log('text is ', text);
         this.sourceData.sizeSource.setValue(text);
       });
@@ -162,7 +162,7 @@ export class InputWrapper extends TypeDiv {
         showcase: [new FormInputBasicExample()],
         sourceWrapper: this.sourceData.basicSource,
       })
-    )
+    );
   }
 
   createDisabled() {
@@ -178,7 +178,7 @@ export class InputWrapper extends TypeDiv {
         showcase: [new FormInputDisabledExample()],
         sourceWrapper: this.sourceData.disabledSource,
       })
-    )
+    );
   }
 
   createClearable() {
@@ -194,7 +194,7 @@ export class InputWrapper extends TypeDiv {
         showcase: [new FormInputClearableExample()],
         sourceWrapper: this.sourceData.clearableSource,
       })
-    )
+    );
   }
 
   createFormat() {
@@ -210,7 +210,7 @@ export class InputWrapper extends TypeDiv {
         showcase: [new FormatInputFormatExample()],
         sourceWrapper: this.sourceData.formatSource,
       })
-    )
+    );
   }
 
   createPassword() {
@@ -226,7 +226,7 @@ export class InputWrapper extends TypeDiv {
         showcase: [new FormInputPasswordExample()],
         sourceWrapper: this.sourceData.passwordSource,
       })
-    )
+    );
   }
 
   createIcon() {
@@ -243,13 +243,13 @@ export class InputWrapper extends TypeDiv {
         styleObj: {
           fontSize: '0.875rem',
           lineHeight: '1.25rem',
-        }
+        },
       }),
       new Example({
         showcase: [new FormInputIconExample()],
         sourceWrapper: this.sourceData.iconSource,
       })
-    )
+    );
   }
 
   createTextarea() {
@@ -266,13 +266,13 @@ export class InputWrapper extends TypeDiv {
         styleObj: {
           fontSize: '0.875rem',
           lineHeight: '1.25rem',
-        }
+        },
       }),
       new Example({
         showcase: [new FormInputTextareaExample()],
         sourceWrapper: this.sourceData.textareaSource,
       })
-    )
+    );
   }
 
   createSize() {
@@ -288,6 +288,6 @@ export class InputWrapper extends TypeDiv {
         showcase: [new FormInputSizeExample()],
         sourceWrapper: this.sourceData.sizeSource,
       })
-    )
+    );
   }
 }

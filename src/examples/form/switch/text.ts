@@ -1,9 +1,10 @@
-import { Br, IJsonData, TypeDiv, XProxy } from '@type-dom/framework';
+import { Br, TypeDiv } from '@type-dom/framework';
 import { TdSwitch } from '@type-dom/ui';
 
 export class SwitchTextExample extends TypeDiv {
   className: 'SwitchTextExample';
-  private switch: XProxy<IJsonData>;
+
+  // private switch: XProxy<IJsonData>;
   constructor() {
     super();
     this.className = 'SwitchTextExample';
@@ -50,7 +51,7 @@ export class SwitchTextExample extends TypeDiv {
         inactiveText: '多个内容',
         switchOnColor: '#13ce66',
         switchOffColor: '#ff4949',
-      }),
-    )
+      })
+    );
   }
 }

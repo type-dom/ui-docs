@@ -1,12 +1,13 @@
 import { Div, StyleAlignItems, TypeDiv } from '@type-dom/framework';
-import { RadioGroup, TdSpace } from '@type-dom/ui';
+import { TdRadioGroup, TdSpace } from '@type-dom/ui';
 
 export class SpaceSizeExample extends TypeDiv {
   className: 'SpaceSizeExample';
+
   constructor() {
     super();
     this.className = 'SpaceSizeExample';
-    const radioGroup = new RadioGroup({
+    const radioGroup = new TdRadioGroup({
       name: 'radio-group',
       options: [
         {
@@ -23,19 +24,18 @@ export class SpaceSizeExample extends TypeDiv {
           label: 'Small',
           // name: 'size',
           value: 'small'
-        },
+        }
       ],
       events: {
-        click: (evt, element: RadioGroup) => {
-          //   todo
+        click: (evt: Event, element: TdRadioGroup) => {
           console.log('click self is ', element);
           // 1. 获取到当前选中的值
-          const value = element.value as string | number;
+          const value = element.modelValue as string | number;
           // 2. 设置间距大小
           (element.nextSibling as TdSpace).setSize(value);
         }
       }
-    })
+    });
     const sizeDivs: Div[] = [];
     for (let i = 0; i < 3; i++) {
       sizeDivs.push(new Div({
@@ -43,8 +43,8 @@ export class SpaceSizeExample extends TypeDiv {
         styleObj: {
           width: '200px',
           height: '200px',
-          background: '#ddd',
-        },
+          background: '#ddd'
+        }
       }));
     }
     // 控制间距的大小
@@ -58,9 +58,9 @@ export class SpaceSizeExample extends TypeDiv {
         new TdSpace({
           wrap: true,
           size: 'medium',
-          childNodes: sizeDivs,
+          childNodes: sizeDivs
         })
-      ],
+      ]
     }));
   }
 }

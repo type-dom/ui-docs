@@ -1,10 +1,10 @@
-import { Code, Div, IJsonData, IPrimitive, ITypeConfig, Pre, TypeDiv, TypeElement, XProxy } from '@type-dom/framework';
+import { Code, Div, IJsonData, ITypeConfig, Pre, TypeDiv, TypeElement, XProxy } from '@type-dom/framework';
 import { $borderColor, $borderRadius, $fillColor, TdDivider } from '@type-dom/ui';
 import { ExampleShowcase } from './example-showcase';
 import { ExampleSourceWrapper } from './example-source-wrapper';
 import { OpBtns } from './op-btns';
 import { ExampleFloatControl } from './example-float-control';
-import { ButtonBasicExample } from '../../examples/basic/button/basic';
+
 interface IExampleConfig extends ITypeConfig {
   showcase: TypeElement[];
   sourceWrapper: string | XProxy<IJsonData>;
