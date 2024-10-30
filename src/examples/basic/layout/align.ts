@@ -3,275 +3,282 @@ import { TdCol, TdRow } from '@type-dom/ui';
 
 export class LayoutAlignExample extends TypeDiv {
   className = 'LayoutAlignExample';
+
   constructor() {
     super();
     const $purple = '#d3dce6';
     const $purpleDark = '#99a9bf';
     const $purpleLight = '#e5e9f2';
     this.addChildren(
-      new TdRow({ // 默认；
+      new TdRow({
+        // 默认；
         styleObj: {
-          marginBottom: '20px',
+          marginBottom: '20px'
         },
-        childNodes: [
+        slot: [
           new TdCol({
             span: 6,
-            childNodes: [
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
-                },
-              }),
-            ],
-          }),
-          new TdCol({
-            span: 6,
-            childNodes: [
-              new Div({
-                styleObj: {
-                  borderRadius: '4px',
-                  minHeight: '36px',
-                  background: $purpleLight,
+                  background: $purple
                 }
               })
             ]
           }),
           new TdCol({
             span: 6,
-            childNodes: [
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
+                  background: $purpleLight
                 }
               })
             ]
           }),
+          new TdCol({
+            span: 6,
+            slot: [
+              new Div({
+                styleObj: {
+                  borderRadius: '4px',
+                  minHeight: '36px',
+                  background: $purple
+                }
+              })
+            ]
+          })
         ]
       }),
-      new TdRow({ // 居中；
+      new TdRow({
+        // 居中；
         justify: 'center',
         styleObj: {
-          marginBottom: '20px',
+          marginBottom: '20px'
         },
-        childNodes: [
+        slot: [
           new TdCol({
             span: 6,
-            childNodes: [
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
-                },
-              }),
-            ],
-          }),
-          new TdCol({
-            span: 6,
-            childNodes: [
-              new Div({
-                styleObj: {
-                  borderRadius: '4px',
-                  minHeight: '36px',
-                  background: $purpleLight,
+                  background: $purple
                 }
               })
             ]
           }),
           new TdCol({
             span: 6,
-            childNodes: [
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
+                  background: $purpleLight
                 }
               })
             ]
           }),
+          new TdCol({
+            span: 6,
+            slot: [
+              new Div({
+                styleObj: {
+                  borderRadius: '4px',
+                  minHeight: '36px',
+                  background: $purple
+                }
+              })
+            ]
+          })
         ]
       }),
-      new TdRow({ // 靠后；
+      new TdRow({
+        // 靠后；
         justify: 'end',
         styleObj: {
-          marginBottom: '20px',
+          marginBottom: '20px'
         },
-        childNodes: [
+        slot: [
           new TdCol({
             span: 6,
-            childNodes: [
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
-                },
-              }),
-            ],
-          }),
-          new TdCol({
-            span: 6,
-            childNodes: [
-              new Div({
-                styleObj: {
-                  borderRadius: '4px',
-                  minHeight: '36px',
-                  background: $purpleLight,
+                  background: $purple
                 }
               })
             ]
           }),
           new TdCol({
             span: 6,
-            childNodes: [
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
+                  background: $purpleLight
                 }
               })
             ]
           }),
+          new TdCol({
+            span: 6,
+            slot: [
+              new Div({
+                styleObj: {
+                  borderRadius: '4px',
+                  minHeight: '36px',
+                  background: $purple
+                }
+              })
+            ]
+          })
         ]
       }),
-      new TdRow({ // 两端对齐;
+      new TdRow({
+        // 两端对齐;
         justify: 'space-between',
         styleObj: {
-          marginBottom: '20px',
+          marginBottom: '20px'
         },
-        childNodes: [
+        slot: [
           new TdCol({
             span: 6,
-            childNodes: [
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
-                },
-              }),
-            ],
-          }),
-          new TdCol({
-            span: 6,
-            childNodes: [
-              new Div({
-                styleObj: {
-                  borderRadius: '4px',
-                  minHeight: '36px',
-                  background: $purpleLight,
+                  background: $purple
                 }
               })
             ]
           }),
           new TdCol({
             span: 6,
-            childNodes: [
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
+                  background: $purpleLight
                 }
               })
             ]
           }),
+          new TdCol({
+            span: 6,
+            slot: [
+              new Div({
+                styleObj: {
+                  borderRadius: '4px',
+                  minHeight: '36px',
+                  background: $purple
+                }
+              })
+            ]
+          })
         ]
       }),
-      new TdRow({ // ;
+      new TdRow({
+        // ;
         justify: 'space-around',
         styleObj: {
-          marginBottom: '20px',
+          marginBottom: '20px'
         },
-        childNodes: [
+        slot: [
           new TdCol({
             span: 6,
-            childNodes: [
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
-                },
-              }),
-            ],
-          }),
-          new TdCol({
-            span: 6,
-            childNodes: [
-              new Div({
-                styleObj: {
-                  borderRadius: '4px',
-                  minHeight: '36px',
-                  background: $purpleLight,
+                  background: $purple
                 }
               })
             ]
           }),
           new TdCol({
             span: 6,
-            childNodes: [
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
+                  background: $purpleLight
                 }
               })
             ]
           }),
+          new TdCol({
+            span: 6,
+            slot: [
+              new Div({
+                styleObj: {
+                  borderRadius: '4px',
+                  minHeight: '36px',
+                  background: $purple
+                }
+              })
+            ]
+          })
         ]
       }),
-      new TdRow({ //
+      new TdRow({
+        //
         justify: 'space-evenly',
         styleObj: {
-          marginBottom: '20px',
+          marginBottom: '20px'
         },
-        childNodes: [
+        slot: [
           new TdCol({
             span: 6,
-            childNodes: [
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
-                },
-              }),
-            ],
-          }),
-          new TdCol({
-            span: 6,
-            childNodes: [
-              new Div({
-                styleObj: {
-                  borderRadius: '4px',
-                  minHeight: '36px',
-                  background: $purpleLight,
+                  background: $purple
                 }
               })
             ]
           }),
           new TdCol({
             span: 6,
-            childNodes: [
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
+                  background: $purpleLight
                 }
               })
             ]
           }),
+          new TdCol({
+            span: 6,
+            slot: [
+              new Div({
+                styleObj: {
+                  borderRadius: '4px',
+                  minHeight: '36px',
+                  background: $purple
+                }
+              })
+            ]
+          })
         ]
-      }),
-    )
+      })
+    );
   }
 }

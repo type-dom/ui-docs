@@ -1,209 +1,226 @@
 import { Div, TypeDiv } from '@type-dom/framework';
 import { TdButton } from '@type-dom/ui';
-import { ElCheckSvg, ElDeleteSvg, ElEditSvg, ElMessageSvg, ElSearchSvg, ElStarSvg } from '@type-dom/svgs';
+import {
+  ElCheckSvg,
+  ElDeleteSvg,
+  ElEditSvg,
+  ElMessageSvg,
+  ElSearchSvg,
+  ElStarSvg
+} from '@type-dom/svgs';
 
 export class ButtonBasicExample extends TypeDiv {
   className = 'ButtonBasicExample';
+
   constructor() {
     super();
     this.addChildren(
       this.createNormalButton(),
       this.createPlainButton(),
       this.createRoundButton(),
-      this.createCircleButton(),
-    )
+      this.createCircleButton()
+    );
   }
+
   createNormalButton() {
     return new Div({
       styleObj: {
-        marginBottom: '1rem',
+        marginBottom: '1rem'
       },
       childNodes: [
         new TdButton({
           name: 'default-btn',
-          title: 'Default',
+          slot: 'Default',
           styleObj: {
-            margin: '3px 10px',
+            margin: '3px 10px'
           },
-          attrObj: {
-            click: 'handleClick',
-          },
+          events: {
+            click: (evt, element) => {
+              console.log('td-button click . ');
+
+            }
+          }
         }),
         new TdButton({
           name: 'primary-btn',
-          title: 'Primary',
+          slot: 'Primary',
           type: 'primary',
           styleObj: {
-            margin: '3px 10px',
+            margin: '3px 10px'
           },
-          attrObj: {
-            click: 'handleClick',
-          },
+          events: {
+            click: (evt, element) => {
+              console.log('td-button click . ');
+            }
+          }
         }),
         new TdButton({
           name: 'success-btn',
-          title: 'Success',
+          slot: 'Success',
           type: 'success',
           styleObj: {
-            margin: '3px 10px',
-          },
+            margin: '3px 10px'
+          }
         }),
         new TdButton({
-          title: 'Info',
+          slot: 'Info',
           type: 'info',
           name: 'info-btn',
           styleObj: {
-            margin: '3px 10px',
-          },
+            margin: '3px 10px'
+          }
         }),
         new TdButton({
           name: 'warning-btn',
-          title: 'Warning',
+          slot: 'Warning',
           type: 'warning',
           styleObj: {
-            margin: '3px 10px',
-          },
+            margin: '3px 10px'
+          }
         }),
         new TdButton({
           name: 'danger-btn',
-          title: 'Danger',
+          slot: 'Danger',
           type: 'danger',
           styleObj: {
-            margin: '3px 10px',
-          },
-        }),
-      ],
+            margin: '3px 10px'
+          }
+        })
+      ]
     });
   }
+
   createPlainButton() {
     return new Div({
       styleObj: {
-        marginBottom: '1rem',
+        marginBottom: '1rem'
       },
       childNodes: [
         new TdButton({
           name: 'default-plain-btn',
-          title: 'Plain',
+          slot: 'Plain',
           plain: true,
           styleObj: {
-            margin: '3px 10px',
-          },
+            margin: '3px 10px'
+          }
         }),
         new TdButton({
           name: 'primary-plain-btn',
-          title: 'Primary',
+          slot: 'Primary',
           type: 'primary',
           plain: true,
           styleObj: {
-            margin: '3px 10px',
-          },
+            margin: '3px 10px'
+          }
         }),
         new TdButton({
           name: 'success-plain-btn',
-          title: 'Success',
+          slot: 'Success',
           type: 'success',
           plain: true,
           styleObj: {
-            margin: '3px 10px',
-          },
+            margin: '3px 10px'
+          }
         }),
         new TdButton({
           name: 'info-plain-btn',
-          title: 'Info',
+          slot: 'Info',
           type: 'info',
           plain: true,
           styleObj: {
-            margin: '3px 10px',
-          },
+            margin: '3px 10px'
+          }
         }),
         new TdButton({
           name: 'warning-plain-btn',
-          title: 'Warning',
+          slot: 'Warning',
           type: 'warning',
           plain: true,
           styleObj: {
-            margin: '3px 10px',
-          },
+            margin: '3px 10px'
+          }
         }),
         new TdButton({
           name: 'danger-plain-btn',
-          title: 'Danger',
+          slot: 'Danger',
           type: 'danger',
           plain: true,
           styleObj: {
-            margin: '3px 10px',
-          },
-        }),
-      ],
+            margin: '3px 10px'
+          }
+        })
+      ]
     });
   }
+
   createRoundButton() {
     return new Div({
       styleObj: {
-        marginBottom: '1rem',
+        marginBottom: '1rem'
       },
       childNodes: [
         new TdButton({
           name: 'round-default-btn',
-          title: 'Round',
+          slot: 'Round',
           round: true,
           styleObj: {
-            margin: '3px 10px',
-          },
+            margin: '3px 10px'
+          }
         }),
         new TdButton({
           name: 'round-primary-btn',
-          title: 'Primary',
+          slot: 'Primary',
           type: 'primary',
           round: true,
           styleObj: {
-            margin: '3px 10px',
-          },
+            margin: '3px 10px'
+          }
         }),
         new TdButton({
           name: 'round-success-btn',
-          title: 'Success',
+          slot: 'Success',
           type: 'success',
           round: true,
           styleObj: {
-            margin: '3px 10px',
-          },
+            margin: '3px 10px'
+          }
         }),
         new TdButton({
           name: 'round-info-btn',
-          title: 'Info',
+          slot: 'Info',
           type: 'info',
           round: true,
           styleObj: {
-            margin: '3px 10px',
-          },
+            margin: '3px 10px'
+          }
         }),
         new TdButton({
           name: 'round-warning-btn',
-          title: 'Warning',
+          slot: 'Warning',
           type: 'warning',
           round: true,
           styleObj: {
-            margin: '3px 10px',
-          },
+            margin: '3px 10px'
+          }
         }),
         new TdButton({
           name: 'round-danger-btn',
-          title: 'Danger',
+          slot: 'Danger',
           type: 'danger',
           round: true,
           styleObj: {
-            margin: '3px 10px',
-          },
-        }),
-      ],
+            margin: '3px 10px'
+          }
+        })
+      ]
     });
   }
+
   createCircleButton() {
     const $circleStyle = {
       margin: '3px 10px',
       width: '32px',
-      height: '32px',
+      height: '32px'
     };
     return new Div({
       childNodes: [
@@ -212,44 +229,43 @@ export class ButtonBasicExample extends TypeDiv {
           svgObj: new ElSearchSvg(),
           circle: true,
           styleObj: $circleStyle,
-          attrObj: {},
         }),
         new TdButton({
           type: 'primary',
           circle: true,
           name: 'circle-primary-btn',
           svgObj: new ElEditSvg(),
-          styleObj: $circleStyle,
+          styleObj: $circleStyle
         }),
         new TdButton({
           type: 'success',
           circle: true,
           name: 'circle-success-btn',
           svgObj: new ElCheckSvg(),
-          styleObj: $circleStyle,
+          styleObj: $circleStyle
         }),
         new TdButton({
           type: 'info',
           circle: true,
           name: 'circle-info-btn',
           svgObj: new ElMessageSvg(),
-          styleObj: $circleStyle,
+          styleObj: $circleStyle
         }),
         new TdButton({
           type: 'warning',
           circle: true,
           name: 'circle-warning-btn',
           svgObj: new ElStarSvg(),
-          styleObj: $circleStyle,
+          styleObj: $circleStyle
         }),
         new TdButton({
           type: 'danger',
           circle: true,
           name: 'circle-danger-btn',
           svgObj: new ElDeleteSvg(),
-          styleObj: $circleStyle,
-        }),
-      ],
+          styleObj: $circleStyle
+        })
+      ]
     });
   }
 }

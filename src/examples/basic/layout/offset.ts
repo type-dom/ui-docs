@@ -3,6 +3,7 @@ import { TdCol, TdRow } from '@type-dom/ui';
 
 export class LayoutOffsetExample extends TypeDiv {
   className = 'LayoutOffsetExample';
+
   constructor() {
     super();
     const $purple = '#d3dce6';
@@ -12,30 +13,30 @@ export class LayoutOffsetExample extends TypeDiv {
       new TdRow({
         gutter: 20,
         styleObj: {
-          marginBottom: '20px',
+          marginBottom: '20px'
         },
-        childNodes: [
+        slot: [
           new TdCol({
             span: 6,
-            childNodes: [
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
-                },
-              }),
-            ],
+                  background: $purple
+                }
+              })
+            ]
           }),
           new TdCol({
             span: 6,
             offset: 6,
-            childNodes: [
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
+                  background: $purple
                 }
               })
             ]
@@ -45,31 +46,31 @@ export class LayoutOffsetExample extends TypeDiv {
       new TdRow({
         gutter: 20,
         styleObj: {
-          marginBottom: '20px',
+          marginBottom: '20px'
         },
-        childNodes: [
+        slot: [
           new TdCol({
             span: 6,
             offset: 6,
-            childNodes: [
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
-                },
-              }),
-            ],
+                  background: $purple
+                }
+              })
+            ]
           }),
           new TdCol({
             span: 6,
             offset: 6,
-            childNodes: [
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
+                  background: $purple
                 }
               })
             ]
@@ -79,24 +80,24 @@ export class LayoutOffsetExample extends TypeDiv {
       new TdRow({
         gutter: 20,
         styleObj: {
-          marginBottom: '20px',
+          marginBottom: '20px'
         },
-        childNodes: [
+        slot: [
           new TdCol({
             span: 12,
             offset: 6,
-            childNodes: [
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
-                },
-              }),
-            ],
-          }),
+                  background: $purple
+                }
+              })
+            ]
+          })
         ]
-      }),
-    )
+      })
+    );
   }
 }

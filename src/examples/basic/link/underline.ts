@@ -3,17 +3,22 @@ import { TdLink } from '@type-dom/ui';
 
 export class LinkUnderlineExample extends TypeDiv {
   className: 'LinkUnderlineExample';
+
   constructor() {
     super();
     this.className = 'LinkUnderlineExample';
     this.addChildren(
       new TdLink({
-        text: 'Without Underline',
+        slot:'Without Underline',
         underline: false,
+        styleObj: {
+          marginRight: '10px',
+          // verticalAlign: 'text-bottom'
+        }
       }),
       new TdLink({
-        text: 'With Underline',
-      }),
-    )
+        slot:'With Underline'
+      })
+    );
   }
 }

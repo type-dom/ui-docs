@@ -3,59 +3,72 @@ import { TdLink } from '@type-dom/ui';
 
 export class LinkBasicExample extends TypeDiv {
   className: 'LinkBasicExample';
+
   constructor() {
     super();
     this.className = 'LinkBasicExample';
     this.addChildren(
       // 链接
       new TdLink({
-        text: 'default',
+        slot: 'default',
         type: 'default',
+        href: '/home',
+        target: '_blank',
         styleObj: {
           marginRight: '10px',
-          verticalAlign: 'text-bottom',
+          // verticalAlign: 'text-bottom'
         },
+        emits: {
+          click: event => {
+            console.log('LinkBasicExample click', event);
+          }
+        }
       }),
       new TdLink({
-        text: 'primary',
+        slot: 'primary',
         type: 'primary',
         styleObj: {
           marginRight: '10px',
-          verticalAlign: 'text-bottom',
+          // verticalAlign: 'text-bottom'
         },
+        emits: {
+          click: event => {
+            console.log('LinkBasicExample click', event);
+          }
+        }
       }),
       new TdLink({
-        text: 'success',
+        slot: 'success',
         type: 'success',
         styleObj: {
           marginRight: '10px',
-          verticalAlign: 'text-bottom',
-        },
+          // verticalAlign: 'text-bottom'
+        }
       }),
       new TdLink({
-        text: 'warning',
+        slot: 'warning',
         type: 'warning',
         styleObj: {
           marginRight: '10px',
-          verticalAlign: 'text-bottom',
-        },
+          // verticalAlign: 'text-bottom'
+        }
       }),
       new TdLink({
-        text: 'danger',
+        slot: 'danger',
         type: 'danger',
         styleObj: {
           marginRight: '10px',
-          verticalAlign: 'text-bottom',
-        },
+          // verticalAlign: 'text-bottom'
+        }
       }),
       new TdLink({
-        text: 'info',
+        slot: 'info',
         type: 'info',
         styleObj: {
           marginRight: '10px',
-          verticalAlign: 'text-bottom',
-        },
-      }),
-    )
- }
+          // verticalAlign: 'text-bottom'
+        }
+      })
+    );
+  }
 }

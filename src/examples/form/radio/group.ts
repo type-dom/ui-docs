@@ -7,9 +7,9 @@ export class FormRadioGroupExample extends TypeDiv {
   constructor() {
     super();
     this.className = 'FormRadioGroupExample';
-    this.addAttrName('form-radio-group-example');
-    this.addStyleObj({
-      padding: '1em 0',
+    this.attr.addName('form-radio-group-example');
+    this.style.addObj({
+      padding: '1em 0'
     });
     this.addChildren(
       new TdRadioGroup({
@@ -26,14 +26,14 @@ export class FormRadioGroupExample extends TypeDiv {
           },
           {
             label: 'OptionB',
-            value: 'opt2',
+            value: 'opt2'
           },
           {
             label: 'OptionC',
-            value: 'opt3',
+            value: 'opt3'
           }
         ]
-      }),
-    )
+      })
+    );
   }
 }

@@ -3,65 +3,66 @@ import { TdLink } from '@type-dom/ui';
 
 export class LinkDisabledExample extends TypeDiv {
   className: 'LinkDisabledExample';
+
   constructor() {
     super();
     this.className = 'LinkDisabledExample';
     this.addChildren(
       // 链接
       new TdLink({
-        text: 'default',
+        slot:'default',
         type: 'default',
         disabled: true,
         styleObj: {
           marginRight: '10px',
-          verticalAlign: 'text-bottom',
-        },
+          // verticalAlign: 'text-bottom'
+        }
       }),
       new TdLink({
-        text: 'primary',
+        slot:'primary',
         type: 'primary',
         disabled: true,
         styleObj: {
           marginRight: '10px',
-          verticalAlign: 'text-bottom',
-        },
+          // verticalAlign: 'text-bottom'
+        }
       }),
       new TdLink({
-        text: 'success',
+        slot:'success',
         type: 'success',
         disabled: true,
         styleObj: {
           marginRight: '10px',
-          verticalAlign: 'text-bottom',
-        },
+          // verticalAlign: 'text-bottom'
+        }
       }),
       new TdLink({
-        text: 'warning',
+        slot:'warning',
         type: 'warning',
         disabled: true,
         styleObj: {
           marginRight: '10px',
-          verticalAlign: 'text-bottom',
-        },
+          // verticalAlign: 'text-bottom'
+        }
       }),
       new TdLink({
-        text: 'danger',
+        slot:'danger',
         type: 'danger',
         disabled: true,
         styleObj: {
           marginRight: '10px',
-          verticalAlign: 'text-bottom',
-        },
+          // verticalAlign: 'text-bottom'
+        }
       }),
       new TdLink({
-        text: 'info',
+        slot:'info',
         type: 'info',
         disabled: true,
         styleObj: {
           marginRight: '10px',
-          verticalAlign: 'text-bottom',
-        },
-      }),
-    )
+          // verticalAlign: 'text-bottom'
+        }
+      })
+    );
   }
 }

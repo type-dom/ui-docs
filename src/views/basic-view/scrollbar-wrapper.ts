@@ -5,9 +5,10 @@ import {
   IJsonData,
   P,
   TypeDiv,
-  XProxy,
+  XProxy
 } from '@type-dom/framework';
-import { Example } from '../../components/example/example';
+import { Example } from '@type-dom/ui';
+
 import { TdScrollbarBasicExample } from '../../examples/basic/scrollbar/basic';
 
 export class ScrollbarWrapper extends TypeDiv {
@@ -17,15 +18,7 @@ export class ScrollbarWrapper extends TypeDiv {
   constructor() {
     super();
     this.sourceData = createProxy({
-      basicSource: '',
-      // verticalSource: '',
-      // sizeSource: '',
-    });
-  }
-
-  mounted() {
-    this.sourceData = createProxy({
-      basicSource: '',
+      basicSource: ''
       // verticalSource: '',
       // sizeSource: '',
     });
@@ -35,11 +28,11 @@ export class ScrollbarWrapper extends TypeDiv {
         styleObj: {
           fontSize: '2.2em',
           fontWeight: 900,
-          margin: '1em 0',
-        },
+          margin: '1em 0'
+        }
       }),
       new P({
-        text: '用于替换浏览器原生滚动条。',
+        text: '用于替换浏览器原生滚动条。'
       })
     );
     this.createBasic();
@@ -47,18 +40,29 @@ export class ScrollbarWrapper extends TypeDiv {
     // this.createSize();
   }
 
+  mounted() {
+    fetch('./examples/basic/scrollbar/basic.ts')
+      .then((res) => res.text())
+      .then((text) => {
+        this.sourceData.basicSource.setValue(text);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+
   createBasic() {
     this.addChildren(
       new Head({
         nodeName: 'h2',
-        text: '基础用法',
+        text: '基础用法'
       }),
       new P({
-        text: '最简单的用法。',
+        text: '最简单的用法。'
       }),
       new Example({
         showcase: [new TdScrollbarBasicExample()],
-        sourceWrapper: this.sourceData.basicSource,
+        sourceWrapper: this.sourceData.basicSource
       })
     );
   }

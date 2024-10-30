@@ -20,22 +20,22 @@ export class FormRadioButtonExample extends TypeDiv {
           {
             label: 'New York',
             value: 'opt1',
-            size: 'large',
+            size: 'large'
           },
           {
             label: 'Washington',
             value: 'opt2',
-            size: 'large',
+            size: 'large'
           },
           {
             label: 'Los Angeles',
             value: 'opt3',
-            size: 'large',
+            size: 'large'
           },
           {
             label: 'Chicago',
             value: 'opt4',
-            size: 'large',
+            size: 'large'
           }
         ]
       }),
@@ -50,19 +50,19 @@ export class FormRadioButtonExample extends TypeDiv {
         options: [
           {
             label: 'New York',
-            value: 'opt1',
+            value: 'opt1'
           },
           {
             label: 'Washington',
-            value: 'opt2',
+            value: 'opt2'
           },
           {
             label: 'Los Angeles',
-            value: 'opt3',
+            value: 'opt3'
           },
           {
             label: 'Chicago',
-            value: 'opt4',
+            value: 'opt4'
           }
         ]
       }),
@@ -79,26 +79,26 @@ export class FormRadioButtonExample extends TypeDiv {
           {
             label: 'New York',
             value: 'opt1',
-            size: 'small',
+            size: 'small'
           },
           {
             label: 'Washington',
             value: 'opt2',
             size: 'small',
-            disabled: true,
+            disabled: true
           },
           {
             label: 'Los Angeles',
             value: 'opt3',
-            size: 'small',
+            size: 'small'
           },
           {
             label: 'Chicago',
             value: 'opt4',
-            size: 'small',
+            size: 'small'
           }
         ]
-      }),
-    )
+      })
+    );
   }
 }

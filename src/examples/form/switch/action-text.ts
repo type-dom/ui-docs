@@ -3,6 +3,7 @@ import { TdSwitch } from '@type-dom/ui';
 
 export class SwitchActionTextExample extends TypeDiv {
   className: 'SwitchActionText';
+
   constructor() {
     super();
     this.className = 'SwitchActionText';
@@ -11,8 +12,8 @@ export class SwitchActionTextExample extends TypeDiv {
         name: 'switch-custom-action-icon',
         modelValue: true,
         activeActionText: 'T',
-        inactiveActionText: 'F',
-      }),
-    )
+        inactiveActionText: 'F'
+      })
+    );
   }
 }

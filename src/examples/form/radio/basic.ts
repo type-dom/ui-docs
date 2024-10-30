@@ -3,10 +3,11 @@ import { TdRadioGroup } from '@type-dom/ui';
 
 export class FormRadioBasicExample extends TypeDiv {
   className: 'FormRadioBasicExample';
+
   constructor() {
     super();
     this.className = 'FormRadioBasicExample';
-    this.addAttrName('form-radio-basic-example');
+    this.attr.addName('form-radio-basic-example');
     this.addChildren(
       new TdRadioGroup({
         name: 'radio-group',
@@ -19,13 +20,13 @@ export class FormRadioBasicExample extends TypeDiv {
             label: 'Option1',
             value: 'opt1',
             size: 'large',
-            checked: true,
+            checked: true
           },
           {
             label: 'Option2',
             value: 'opt2',
             size: 'large',
-            checked: false,
+            checked: false
           }
         ]
       }),
@@ -41,13 +42,13 @@ export class FormRadioBasicExample extends TypeDiv {
             label: 'Option1',
             value: 'opt1',
             // size: 'default',
-            checked: true,
+            checked: true
           },
           {
             label: 'Option2',
             value: 'opt2',
             // size: 'default',
-            checked: false,
+            checked: false
           }
         ]
       }),
@@ -63,13 +64,13 @@ export class FormRadioBasicExample extends TypeDiv {
             label: 'Option1',
             value: 'opt1',
             size: 'small',
-            checked: true,
+            checked: true
           },
           {
             label: 'Option2',
             value: 'opt2',
             size: 'small',
-            checked: false,
+            checked: false
           }
         ]
       }),
@@ -86,16 +87,16 @@ export class FormRadioBasicExample extends TypeDiv {
             label: 'Option1',
             value: 'opt1',
             size: 'small',
-            checked: true,
+            checked: true
           },
           {
             label: 'Option2',
             value: 'opt2',
             size: 'small',
-            checked: false,
+            checked: false
           }
         ]
       })
-    )
+    );
   }
 }

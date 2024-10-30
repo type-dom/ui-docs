@@ -3,84 +3,85 @@ import { TdText } from '@type-dom/ui';
 
 export class TextOverrideExample extends TypeDiv {
   className: 'TextOverrideExample';
+
   constructor() {
     super();
     this.className = 'TextOverrideExample';
     this.addChildren(
       new TdText({
-        text: 'Span',
+        slot: 'Span',
         styleObj: {
-          margin: '5px 10px',
-        },
+          margin: '5px 10px'
+        }
       }),
       new TdText({
-        text: 'This is a paragraph.',
+        slot: 'This is a paragraph.',
         tag: 'p',
         styleObj: {
-          margin: '5px 10px',
-        },
+          margin: '5px 10px'
+        }
       }),
       new TdText({
-        text: 'Bold',
+        slot: 'Bold',
         tag: 'b',
         styleObj: {
-          margin: '5px 10px',
-        },
+          margin: '5px 10px'
+        }
       }),
       new TdText({
-        text: 'Italic',
+        slot: 'Italic',
         tag: 'i',
         styleObj: {
-          margin: '5px 10px',
-        },
+          margin: '5px 10px'
+        }
       }),
       new TdText({
-        text: 'This is ',
         styleObj: {
-          margin: '5px 10px',
+          margin: '5px 10px'
         },
-        childNodes: [
-          new TdText({
-            text: 'subscript',
+        slot: [
+          'This is ',
+            new TdText({
+            slot: 'subscript',
             tag: 'sub',
-            size: 'small',
-          }),
-        ],
+            size: 'small'
+          })
+        ]
       }),
       new TdText({
-        text: 'This is ',
         styleObj: {
-          margin: '5px 10px',
+          margin: '5px 10px'
         },
-        childNodes: [
+        slot: [
+          'This is ',
           new TdText({
-            text: 'superscript',
+            slot: 'superscript',
             tag: 'sup',
-            size: 'small',
-          }),
-        ],
+            size: 'small'
+          })
+        ]
       }),
       new TdText({
-        text: 'Inserted',
+        slot: 'Inserted',
         tag: 'ins',
         styleObj: {
-          margin: '5px 10px',
-        },
+          margin: '5px 10px'
+        }
       }),
       new TdText({
-        text: 'Deleted',
+        slot: 'Deleted',
         tag: 'del',
         styleObj: {
-          margin: '5px 10px',
-        },
+          margin: '5px 10px'
+        }
       }),
       new TdText({
-        text: 'Marked',
+        slot: 'Marked',
         tag: 'mark',
         styleObj: {
-          margin: '5px 10px',
-        },
-      }),
-    )
+          margin: '5px 10px'
+        }
+      })
+    );
   }
 }

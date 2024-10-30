@@ -1,27 +1,43 @@
 import { TypeDiv } from '@type-dom/framework';
 import { TdButton, TdButtonGroup } from '@type-dom/ui';
-import { ElArrowLeftSvg, ElArrowRightSvg, ElDeleteSvg, ElEditSvg, ElShareSvg } from '@type-dom/svgs';
+import {
+  ElArrowLeftSvg,
+  ElArrowRightSvg,
+  ElDeleteSvg,
+  ElEditSvg,
+  ElShareSvg
+} from '@type-dom/svgs';
 
 export class ButtonGroupExample extends TypeDiv {
   className = 'ButtonGroupExample';
+
   constructor() {
     super();
     this.addChildren(...this.createButtonGroup());
   }
+
   createButtonGroup() {
     return [
       new TdButtonGroup({
-        childNodes: [
+        slot: [
           new TdButton({
             type: 'primary',
-            title: 'Previous Page',
-            svgObj: new ElArrowLeftSvg(),
+            slot: 'Previous Page',
+            svgObj: new ElArrowLeftSvg()
           }),
           new TdButton({
             type: 'primary',
-            title: 'Next Page',
-            svgObj: new ElArrowRightSvg(),
-            iconPosition: 'right'
+            slot: [
+              'Next Page',
+              new ElArrowRightSvg({
+                styleObj: {
+                  width: '1em',
+                  height: '1em',
+                  marginLeft: '5px'
+                }
+              })
+            ],
+            // iconPosition: 'right',
           })
         ]
       }),
@@ -29,21 +45,21 @@ export class ButtonGroupExample extends TypeDiv {
         styleObj: {
           marginLeft: '1em'
         },
-        childNodes: [
+        slot: [
           new TdButton({
             type: 'primary',
-            svgObj: new ElEditSvg(),
+            svgObj: new ElEditSvg()
           }),
           new TdButton({
             type: 'primary',
-            svgObj: new ElShareSvg(),
+            svgObj: new ElShareSvg()
           }),
           new TdButton({
             type: 'primary',
-            svgObj: new ElDeleteSvg(),
+            svgObj: new ElDeleteSvg()
           })
         ]
       })
-    ]
+    ];
   }
 }

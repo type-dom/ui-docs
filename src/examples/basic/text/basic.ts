@@ -3,44 +3,45 @@ import { TdText } from '@type-dom/ui';
 
 export class TextBasicExample extends TypeDiv {
   className: 'TextBasicExample';
+
   constructor() {
     super();
     this.className = 'TextBasicExample';
     this.addChildren(
       new TdText({
-        text: 'Default',
+        slot: 'Default',
         styleObj: {
-          margin: '5px 10px',
-        },
+          margin: '5px 10px'
+        }
       }),
       new TdText({
-        text: 'Primary',
+        slot: 'Primary',
         type: 'primary',
         styleObj: {
-          margin: '5px 10px',
-        },
+          margin: '5px 10px'
+        }
       }),
       new TdText({
-        text: 'Success',
+        slot: 'Success',
         type: 'success',
         styleObj: {
-          margin: '5px 10px',
-        },
+          margin: '5px 10px'
+        }
       }),
       new TdText({
-        text: 'Warning',
+        slot: 'Warning',
         type: 'warning',
         styleObj: {
-          margin: '5px 10px',
-        },
+          margin: '5px 10px'
+        }
       }),
       new TdText({
-        text: 'Danger',
+        slot: 'Danger',
         type: 'danger',
         styleObj: {
-          margin: '5px 10px',
-        },
-      }),
-    )
+          margin: '5px 10px'
+        }
+      })
+    );
   }
- }
+}

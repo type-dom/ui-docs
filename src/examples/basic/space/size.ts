@@ -9,6 +9,7 @@ export class SpaceSizeExample extends TypeDiv {
     this.className = 'SpaceSizeExample';
     const radioGroup = new TdRadioGroup({
       name: 'radio-group',
+      modelValue: 'default',
       options: [
         {
           label: 'Large',
@@ -38,29 +39,33 @@ export class SpaceSizeExample extends TypeDiv {
     });
     const sizeDivs: Div[] = [];
     for (let i = 0; i < 3; i++) {
-      sizeDivs.push(new Div({
-        text: `Div${i}`,
-        styleObj: {
-          width: '200px',
-          height: '200px',
-          background: '#ddd'
-        }
-      }));
+      sizeDivs.push(
+        new Div({
+          slot: `Div3${i}`,
+          styleObj: {
+            width: '200px',
+            height: '200px',
+            background: '#ddd'
+          }
+        })
+      );
     }
     // 控制间距的大小
-    this.addChild(new TdSpace({
-      wrap: true,
-      size: 'small',
-      direction: 'vertical',
-      alignment: StyleAlignItems.start,
-      childNodes: [
-        radioGroup,
-        new TdSpace({
-          wrap: true,
-          size: 'medium',
-          childNodes: sizeDivs
-        })
-      ]
-    }));
+    this.addChild(
+      new TdSpace({
+        wrap: true,
+        size: 'small',
+        direction: 'vertical',
+        alignment: StyleAlignItems.start,
+        slot: [
+          radioGroup,
+          new TdSpace({
+            wrap: true,
+            size: 'medium',
+            slot: sizeDivs
+          })
+        ]
+      })
+    );
   }
 }

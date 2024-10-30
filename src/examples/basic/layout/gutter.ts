@@ -3,6 +3,7 @@ import { TdCol, TdRow } from '@type-dom/ui';
 
 export class LayoutGutterExample extends TypeDiv {
   className = 'LayoutGutterExample';
+
   constructor() {
     super();
 
@@ -13,59 +14,59 @@ export class LayoutGutterExample extends TypeDiv {
       new TdRow({
         gutter: 20,
         styleObj: {
-          marginBottom: '20px',
+          marginBottom: '20px'
         },
-        childNodes: [
+        slot: [
           new TdCol({
             span: 6,
-            childNodes: [
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
-                },
-              }),
-            ],
-          }),
-          new TdCol({
-            span: 6,
-            childNodes: [
-              new Div({
-                styleObj: {
-                  borderRadius: '4px',
-                  minHeight: '36px',
-                  background: $purpleLight,
+                  background: $purple
                 }
               })
             ]
           }),
           new TdCol({
             span: 6,
-            childNodes: [
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
+                  background: $purpleLight
                 }
               })
             ]
           }),
           new TdCol({
             span: 6,
-            childNodes: [
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purpleLight,
+                  background: $purple
+                }
+              })
+            ]
+          }),
+          new TdCol({
+            span: 6,
+            slot: [
+              new Div({
+                styleObj: {
+                  borderRadius: '4px',
+                  minHeight: '36px',
+                  background: $purpleLight
                 }
               })
             ]
           })
         ]
-      }),
-    )
+      })
+    );
   }
 }

@@ -11,12 +11,12 @@ export class SpaceVerticalExample extends TypeDiv {
     for (let i = 0; i < 3; i++) {
       divs2.push(
         new Div({
-          text: `Div2${i}`,
+          slot: `Div2${i}`,
           styleObj: {
             width: '200px',
             height: '200px',
-            background: '#ddd',
-          },
+            background: '#ddd'
+          }
         })
       );
     }
@@ -24,7 +24,7 @@ export class SpaceVerticalExample extends TypeDiv {
       new TdSpace({
         wrap: true,
         direction: 'vertical',
-        childNodes: divs2,
+        slot: divs2
       })
     );
   }

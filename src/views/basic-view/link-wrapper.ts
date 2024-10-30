@@ -1,10 +1,19 @@
-import { createProxy, Div, Head, IJsonData, P, RouterView, TypeDiv, XProxy } from '@type-dom/framework';
-import { Example } from '../../components/example/example';
+import {
+  createProxy,
+  Div,
+  Head,
+  IJsonData,
+  P,
+  RouterView,
+  TypeDiv,
+  XProxy
+} from '@type-dom/framework';
+import { CustomBlock, Example } from '@type-dom/ui';
+
 import { LinkBasicExample } from '../../examples/basic/link/basic';
 import { LinkDisabledExample } from '../../examples/basic/link/disabled';
 import { LinkUnderlineExample } from '../../examples/basic/link/underline';
 import { LinkIconExample } from '../../examples/basic/link/icon';
-import { CustomBlock } from '../../components/custom-block/custom-block';
 
 export class LinkWrapper extends TypeDiv {
   className: 'LinkWrapper';
@@ -20,59 +29,61 @@ export class LinkWrapper extends TypeDiv {
         styleObj: {
           fontSize: '2.2em',
           fontWeight: 900,
-          margin: '1em 0',
-        },
+          margin: '1em 0'
+        }
       }),
       new P({
-        text: '文字超链接。',
-      }),
-    )
+        text: '文字超链接。'
+      })
+    );
     this.sourceData = createProxy({
       basicSource: '',
       disabledSource: '',
       underlineSource: '',
-      iconSource: '',
+      iconSource: ''
     });
     this.createBasic();
     this.createDisabled();
     this.createUnderline();
     this.createIcon();
   }
+
   mounted() {
     console.log('LinkWrapper mounted');
     fetch('./examples/basic/link/basic.ts')
-      .then(res => res.text())
-      .then(text => {
+      .then((res) => res.text())
+      .then((text) => {
         this.sourceData.basicSource.setValue(text);
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
       });
     fetch('./examples/basic/link/disabled.ts')
-      .then(res => res.text())
-      .then(text => {
+      .then((res) => res.text())
+      .then((text) => {
         this.sourceData.disabledSource.setValue(text);
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
       });
     fetch('./examples/basic/link/underline.ts')
-      .then(res => res.text())
-      .then(text => {
+      .then((res) => res.text())
+      .then((text) => {
         this.sourceData.underlineSource.setValue(text);
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
       });
     fetch('./examples/basic/link/icon.ts')
-      .then(res => res.text())
-      .then(text => {
+      .then((res) => res.text())
+      .then((text) => {
         this.sourceData.iconSource.setValue(text);
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
       });
   }
+
   createBasic() {
     this.addChildren(
       new Head({
@@ -84,10 +95,11 @@ export class LinkWrapper extends TypeDiv {
       }),
       new Example({
         showcase: [new LinkBasicExample()],
-        sourceWrapper: this.sourceData.basicSource,
+        sourceWrapper: this.sourceData.basicSource
       })
-    )
+    );
   }
+
   createDisabled() {
     this.addChildren(
       new Head({
@@ -99,10 +111,11 @@ export class LinkWrapper extends TypeDiv {
       }),
       new Example({
         showcase: [new LinkDisabledExample()],
-        sourceWrapper: this.sourceData.disabledSource,
+        sourceWrapper: this.sourceData.disabledSource
       })
-    )
+    );
   }
+
   createUnderline() {
     this.addChildren(
       new Head({
@@ -114,10 +127,11 @@ export class LinkWrapper extends TypeDiv {
       }),
       new Example({
         showcase: [new LinkUnderlineExample()],
-        sourceWrapper: this.sourceData.underlineSource,
-      }),
-    )
+        sourceWrapper: this.sourceData.underlineSource
+      })
+    );
   }
+
   createIcon() {
     this.addChildren(
       new Head({
@@ -137,8 +151,8 @@ export class LinkWrapper extends TypeDiv {
       }),
       new Example({
         showcase: [new LinkIconExample()],
-        sourceWrapper: this.sourceData.iconSource,
-      }),
-    )
+        sourceWrapper: this.sourceData.iconSource
+      })
+    );
   }
 }

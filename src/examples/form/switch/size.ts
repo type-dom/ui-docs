@@ -3,31 +3,34 @@ import { TdSwitch } from '@type-dom/ui';
 
 export class SwitchSizeExample extends TypeDiv {
   className: 'SwitchSizeExample';
-  // private sourceData: XProxy<IJsonData>;
+
   constructor() {
     super();
     this.className = 'SwitchSizeExample';
     this.addChildren(
       new TdSwitch({
         name: 'switch-large',
+        modelValue: true,
         size: 'large',
         activeText: 'Open',
-        inactiveText: 'Close',
+        inactiveText: 'Close'
       }),
       new Br(),
       new TdSwitch({
         name: 'switch-default',
-        // size: 'default',,
+        modelValue: true,
+        // size: 'default',
         activeText: 'Open',
-        inactiveText: 'Close',
+        inactiveText: 'Close'
       }),
       new Br(),
       new TdSwitch({
         name: 'switch-small',
+        modelValue: true,
         size: 'small',
         activeText: 'Open',
-        inactiveText: 'Close',
-      }),
-    )
+        inactiveText: 'Close'
+      })
+    );
   }
 }

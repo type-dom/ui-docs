@@ -3,6 +3,7 @@ import { TdCol, TdRow } from '@type-dom/ui';
 
 export class LayoutMixinExample extends TypeDiv {
   className = 'LayoutMixinExample';
+
   constructor() {
     super();
     const $purple = '#d3dce6';
@@ -12,85 +13,29 @@ export class LayoutMixinExample extends TypeDiv {
       new TdRow({
         gutter: 20,
         styleObj: {
-          marginBottom: '20px',
+          marginBottom: '20px'
         },
-        childNodes: [
+        slot: [
           new TdCol({
             span: 16,
-            childNodes: [
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
-                },
-              }),
-            ],
-          }),
-          new TdCol({
-            span: 8,
-            childNodes: [
-              new Div({
-                styleObj: {
-                  borderRadius: '4px',
-                  minHeight: '36px',
-                  background: $purpleLight,
-                }
-              })
-            ]
-          }),
-        ]
-      }),
-      new TdRow({
-        gutter: 20,
-        styleObj: {
-          marginBottom: '20px',
-        },
-        childNodes: [
-          new TdCol({
-            span: 8,
-            childNodes: [
-              new Div({
-                styleObj: {
-                  borderRadius: '4px',
-                  minHeight: '36px',
-                  background: $purple,
-                },
-              }),
-            ],
-          }),
-          new TdCol({
-            span: 8,
-            childNodes: [
-              new Div({
-                styleObj: {
-                  borderRadius: '4px',
-                  minHeight: '36px',
-                  background: $purpleLight,
+                  background: $purple
                 }
               })
             ]
           }),
           new TdCol({
-            span: 4,
-            childNodes: [
+            span: 8,
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
-                }
-              })
-            ]
-          }),
-          new TdCol({
-            span: 4,
-            childNodes: [
-              new Div({
-                styleObj: {
-                  borderRadius: '4px',
-                  minHeight: '36px',
-                  background: $purpleLight,
+                  background: $purpleLight
                 }
               })
             ]
@@ -100,47 +45,103 @@ export class LayoutMixinExample extends TypeDiv {
       new TdRow({
         gutter: 20,
         styleObj: {
-          marginBottom: '20px',
+          marginBottom: '20px'
         },
-        childNodes: [
+        slot: [
           new TdCol({
-            span: 4,
-            childNodes: [
+            span: 8,
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
-                },
-              }),
-            ],
+                  background: $purple
+                }
+              })
+            ]
           }),
           new TdCol({
-            span: 16,
-            childNodes: [
+            span: 8,
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purpleLight,
+                  background: $purpleLight
                 }
               })
             ]
           }),
           new TdCol({
             span: 4,
-            childNodes: [
+            slot: [
               new Div({
                 styleObj: {
                   borderRadius: '4px',
                   minHeight: '36px',
-                  background: $purple,
+                  background: $purple
+                }
+              })
+            ]
+          }),
+          new TdCol({
+            span: 4,
+            slot: [
+              new Div({
+                styleObj: {
+                  borderRadius: '4px',
+                  minHeight: '36px',
+                  background: $purpleLight
                 }
               })
             ]
           })
         ]
       }),
-    )
+      new TdRow({
+        gutter: 20,
+        styleObj: {
+          marginBottom: '20px'
+        },
+        slot: [
+          new TdCol({
+            span: 4,
+            slot: [
+              new Div({
+                styleObj: {
+                  borderRadius: '4px',
+                  minHeight: '36px',
+                  background: $purple
+                }
+              })
+            ]
+          }),
+          new TdCol({
+            span: 16,
+            slot: [
+              new Div({
+                styleObj: {
+                  borderRadius: '4px',
+                  minHeight: '36px',
+                  background: $purpleLight
+                }
+              })
+            ]
+          }),
+          new TdCol({
+            span: 4,
+            slot: [
+              new Div({
+                styleObj: {
+                  borderRadius: '4px',
+                  minHeight: '36px',
+                  background: $purple
+                }
+              })
+            ]
+          })
+        ]
+      })
+    );
   }
 }

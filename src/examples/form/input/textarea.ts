@@ -3,6 +3,7 @@ import { TypeDiv } from '@type-dom/framework';
 
 export class FormInputTextareaExample extends TypeDiv {
   className: 'FormInputTextareaExample';
+
   constructor() {
     super();
     this.className = 'FormInputTextareaExample';
@@ -11,8 +12,8 @@ export class FormInputTextareaExample extends TypeDiv {
       new TdInput({
         width: 240,
         type: 'textarea',
-        autosize: true,
-      }),
-    )
+        autosize: true
+      })
+    );
   }
 }

@@ -1,10 +1,10 @@
-import { createProxy, TypeDiv } from '@type-dom/framework';
+import { TypeDiv } from '@type-dom/framework';
 import {
   ILabelPosition,
   TdForm,
   TdFormItem,
   TdInput,
-  TdRadioGroup,
+  TdRadioGroup
 } from '@type-dom/ui';
 
 export class FormAlignExample extends TypeDiv {
@@ -12,76 +12,77 @@ export class FormAlignExample extends TypeDiv {
 
   constructor() {
     super();
-    const formRef = createProxy(null);
     this.addChildren(
       new TdRadioGroup({
         name: 'radio-group',
         modelValue: 'right',
         isButton: true,
         styleObj: {
-          marginBottom: '40px',
+          marginBottom: '40px'
         },
         options: [
           {
             label: 'Left',
-            value: 'left',
+            value: 'left'
           },
           {
             label: 'Right',
-            value: 'right',
+            value: 'right'
           },
           {
             label: 'Top',
-            value: 'top',
-          },
+            value: 'top'
+          }
         ],
         events: {
-          click: (evt, element: TdRadioGroup) => {
+          click: (evt, element: TdRadioGroup | undefined) => {
             console.log('radio-group event ', evt);
             console.log('element.modelValue is ', element?.modelValue);
-            if (formRef.value && formRef.value instanceof TdForm) {
-              formRef.value.children.forEach(child => {
+            const form = this.down<TdForm>('refId', 'form-ref');
+            console.log('form is ', form);
+            if (form && form instanceof TdForm) {
+              form.children.forEach((child) => {
                 if (child instanceof TdFormItem) {
                   if (element?.modelValue === 'top') {
                     child.setLabelPosition('left');
-                    child.setStyleObj({
-                      display: 'block',
+                    child.style.setObj({
+                      display: 'block'
                     });
                   } else {
                     child.setLabelPosition(
                       element?.modelValue as ILabelPosition
                     );
-                    child.setStyleObj({
-                      display: 'flex',
+                    child.style.setObj({
+                      display: 'flex'
                     });
                   }
                 }
               });
             }
-          },
-        },
+          }
+        }
       }),
       new TdForm({
-        // labelPosition: 'left',
-        ref: formRef,
+        labelPosition: 'left',
+        refId: 'form-ref',
         labelWidth: 'auto',
         styleObj: {
-          maxWidth: '600px',
+          maxWidth: '600px'
         },
-        childNodes: [
+        slot: [
           new TdFormItem({
             label: 'Activity name',
-            contents: [new TdInput()],
+            slot: new TdInput()
           }),
           new TdFormItem({
             label: 'Activity zone',
-            contents: [new TdInput()],
+            slot: new TdInput()
           }),
           new TdFormItem({
             label: 'Activity time',
-            contents: [new TdInput()],
-          }),
-        ],
+            slot: new TdInput()
+          })
+        ]
       })
     );
   }

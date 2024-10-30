@@ -1,6 +1,6 @@
-import { RouterView, TypeDiv, Img, Span } from '@type-dom/framework';
-import { TdAside, TdContainer, TdFooter, TdHeader, TdMain } from '@type-dom/ui';
-import { Menus } from '../components/menus/menus';
+import { RouterView, TypeDiv, Img, Span, Div } from '@type-dom/framework';
+import { Menus, TdAside, TdContainer, TdFooter, TdHeader, TdMain, TdText } from '@type-dom/ui';
+import { routerUI } from '../router';
 
 /**
  * 项目布局组件
@@ -8,21 +8,14 @@ import { Menus } from '../components/menus/menus';
  */
 export class Layout extends TypeDiv {
   className: 'Layout';
-  routerView: RouterView
+  routerView: RouterView;
+
   constructor() {
     super();
     this.className = 'Layout';
-    this.addAttrName('Layout');
+    this.attr.addName('Layout');
     this.routerView = new RouterView({
-      parent: this,
       name: 'layout-view',
-      styleObj: {
-        display: 'block',
-        boxSizing: 'border-box',
-        margin: '0',
-        padding: '0',
-        // width: 'calc(100% - ' + menusWidth + 'px)',
-      }
     });
     this.initComponents();
   }
@@ -30,31 +23,51 @@ export class Layout extends TypeDiv {
   private initComponents() {
     const header = this.createHeader();
     const bodyContainer = this.createBodyContainer();
-    this.addChild(new TdContainer({
-      name: 'main-container',
-      vertical: true,
-      childNodes: [
-        header,
-        bodyContainer,
-      ]
-    }));
+    this.addChild(
+      new TdContainer({
+        name: 'main-container',
+        vertical: true,
+        slot: [header, bodyContainer]
+      })
+    );
   }
+
   private createHeader() {
     return new TdHeader({
       name: 'header',
-      childNodes: [
+      slot: [
         new Img({
           attrObj: {
             name: 'logo',
             src: './assets/logo.png',
             width: 40,
-            height: 40,
+            height: 40
           }
         }),
         new Span({
           text: 'UI Component',
           styleObj: {
-            paddingLeft: '20px',
+            paddingLeft: '20px'
+          }
+        }),
+        new TdText({
+          text: 'Logout',
+          styleObj: {
+            position: 'absolute',
+            lineHeight: 2.5,
+            right: '50px',
+            // paddingLeft: '20px'
+          },
+          events: {
+            click: () => {
+              routerUI.push('/login');
+            },
+            mouseenter: (event  ) => {
+              // console.log('mouseenter event is ', event, ', target is ', event.target);
+              if (event?.target instanceof HTMLElement || event?.target instanceof SVGElement) {
+                event?.target.style.setProperty('cursor', 'pointer');
+              }
+            }
           }
         })
       ]
@@ -62,40 +75,51 @@ export class Layout extends TypeDiv {
   }
 
   private createBodyContainer() {
-    return  new TdContainer({
+    return new TdContainer({
       name: 'body-container',
-      childNodes: [
+      styleObj: {
+        height: 'calc(100vh - 60px)'
+      },
+      slot: [
         new TdAside({
           name: 'td-aside',
           width: 250,
           styleObj: {
             border: '1px solid #ddd'
           },
-          childNodes: [
-            new Menus({
-              name: 'menus',
-            }),
-          ]
+          slot: new Menus({
+            name: 'menus',
+            router: routerUI,
+          })
         }),
         new TdContainer({
           name: 'view-container',
           vertical: true,
           styleObj: {
-            borderTop: '1px solid #ddd'
+            borderTop: '1px solid #ddd',
           },
-          childNodes: [
+          slot: [
             new TdMain({
               // routerView: this.routerView,
               styleObj: {
-                padding: '0 20px'
+                padding: '0 20px',
               },
-              childNodes: [
-                this.routerView,
-              ]
+              slot: this.routerView
             }),
             new TdFooter({
               name: 'footer',
-              text: 'footer'
+              backgroundColor: 'f5f7fa',
+              styleObj: {
+                padding: '20px 30px 60px',
+                boxSizing: 'border-box',
+              },
+              slot: new Div({
+                childNodes: [
+                  new Span({
+                    text: 'Copyright © 2023-present TypeDom'
+                  })
+                ]
+              })
             })
           ]
         })

@@ -6,9 +6,10 @@ import {
   P,
   RouterView,
   TypeDiv,
-  XProxy,
+  XProxy
 } from '@type-dom/framework';
-import { Example } from '../../components/example/example';
+import { Example } from '@type-dom/ui';
+
 import { FormInputBasicExample } from '../../examples/form/input/basic';
 import { FormInputDisabledExample } from '../../examples/form/input/disabled';
 import { FormInputClearableExample } from '../../examples/form/input/clearable';
@@ -34,11 +35,11 @@ export class InputWrapper extends TypeDiv {
         styleObj: {
           fontSize: '2.2em',
           fontWeight: 900,
-          margin: '1em 0',
-        },
+          margin: '1em 0'
+        }
       }),
       new P({
-        text: '通过鼠标或键盘输入字符',
+        text: '通过鼠标或键盘输入字符'
       })
     );
     // this.setContext(true);
@@ -50,7 +51,7 @@ export class InputWrapper extends TypeDiv {
       passwordSource: '',
       iconSource: '',
       textareaSource: '',
-      sizeSource: '',
+      sizeSource: ''
     });
     // 基础用法
     this.createBasic();
@@ -105,49 +106,49 @@ export class InputWrapper extends TypeDiv {
     fetch('./examples/form/input/basic.ts')
       .then((res) => res.text())
       .then((text) => {
-        console.log('text is ', text);
+        // console.log('text is ', text);
         this.sourceData.basicSource.setValue(text);
       });
     fetch('./examples/form/input/disabled.ts')
       .then((res) => res.text())
       .then((text) => {
-        console.log('text is ', text);
+        // console.log('text is ', text);
         this.sourceData.disabledSource.setValue(text);
       });
     fetch('./examples/form/input/clearable.ts')
       .then((res) => res.text())
       .then((text) => {
-        console.log('text is ', text);
+        // console.log('text is ', text);
         this.sourceData.clearableSource.setValue(text);
       });
     fetch('./examples/form/input/format.ts')
       .then((res) => res.text())
       .then((text) => {
-        console.log('text is ', text);
+        // console.log('text is ', text);
         this.sourceData.formatSource.setValue(text);
       });
     fetch('./examples/form/input/password.ts')
       .then((res) => res.text())
       .then((text) => {
-        console.log('text is ', text);
+        // console.log('text is ', text);
         this.sourceData.passwordSource.setValue(text);
       });
     fetch('./examples/form/input/icon.ts')
       .then((res) => res.text())
       .then((text) => {
-        console.log('text is ', text);
+        // console.log('text is ', text);
         this.sourceData.iconSource.setValue(text);
       });
     fetch('./examples/form/input/textarea.ts')
       .then((res) => res.text())
       .then((text) => {
-        console.log('text is ', text);
+        // console.log('text is ', text);
         this.sourceData.textareaSource.setValue(text);
       });
     fetch('./examples/form/input/size.ts')
       .then((res) => res.text())
       .then((text) => {
-        console.log('text is ', text);
+        // console.log('text is ', text);
         this.sourceData.sizeSource.setValue(text);
       });
   }
@@ -156,11 +157,11 @@ export class InputWrapper extends TypeDiv {
     this.addChildren(
       new Head({
         nodeName: 'h2',
-        text: '基本用法',
+        text: '基本用法'
       }),
       new Example({
         showcase: [new FormInputBasicExample()],
-        sourceWrapper: this.sourceData.basicSource,
+        sourceWrapper: this.sourceData.basicSource
       })
     );
   }
@@ -169,14 +170,14 @@ export class InputWrapper extends TypeDiv {
     this.addChildren(
       new Head({
         nodeName: 'h2',
-        text: '禁用状态',
+        text: '禁用状态'
       }),
       new P({
-        text: '通过 disabled 属性指定是否禁用 input 组件',
+        text: '通过 disabled 属性指定是否禁用 input 组件'
       }),
       new Example({
         showcase: [new FormInputDisabledExample()],
-        sourceWrapper: this.sourceData.disabledSource,
+        sourceWrapper: this.sourceData.disabledSource
       })
     );
   }
@@ -185,14 +186,14 @@ export class InputWrapper extends TypeDiv {
     this.addChildren(
       new Head({
         nodeName: 'h2',
-        text: '一键清空',
+        text: '一键清空'
       }),
       new P({
-        text: '使用clearable属性即可得到一个可一键清空的输入框',
+        text: '使用clearable属性即可得到一个可一键清空的输入框'
       }),
       new Example({
         showcase: [new FormInputClearableExample()],
-        sourceWrapper: this.sourceData.clearableSource,
+        sourceWrapper: this.sourceData.clearableSource
       })
     );
   }
@@ -201,14 +202,14 @@ export class InputWrapper extends TypeDiv {
     this.addChildren(
       new Head({
         nodeName: 'h2',
-        text: '格式化',
+        text: '格式化'
       }),
       new P({
-        text: '在 formatter的情况下显示值，我们通常同时使用 parser',
+        text: '在 formatter的情况下显示值，我们通常同时使用 parser'
       }),
       new Example({
         showcase: [new FormatInputFormatExample()],
-        sourceWrapper: this.sourceData.formatSource,
+        sourceWrapper: this.sourceData.formatSource
       })
     );
   }
@@ -217,14 +218,14 @@ export class InputWrapper extends TypeDiv {
     this.addChildren(
       new Head({
         nodeName: 'h2',
-        text: '密码框',
+        text: '密码框'
       }),
       new P({
-        text: '使用 show-password 属性即可得到一个可切换显示隐藏的密码框',
+        text: '使用 show-password 属性即可得到一个可切换显示隐藏的密码框'
       }),
       new Example({
         showcase: [new FormInputPasswordExample()],
-        sourceWrapper: this.sourceData.passwordSource,
+        sourceWrapper: this.sourceData.passwordSource
       })
     );
   }
@@ -233,21 +234,21 @@ export class InputWrapper extends TypeDiv {
     this.addChildren(
       new Head({
         nodeName: 'h2',
-        text: '带图标的输入框',
+        text: '带图标的输入框'
       }),
       new P({
-        text: '带有图标标记输入类型',
+        text: '带有图标标记输入类型'
       }),
       new P({
         text: '通过设置 prefix-icon 或 suffix-icon 属性即可',
         styleObj: {
           fontSize: '0.875rem',
-          lineHeight: '1.25rem',
-        },
+          lineHeight: '1.25rem'
+        }
       }),
       new Example({
         showcase: [new FormInputIconExample()],
-        sourceWrapper: this.sourceData.iconSource,
+        sourceWrapper: this.sourceData.iconSource
       })
     );
   }
@@ -256,21 +257,21 @@ export class InputWrapper extends TypeDiv {
     this.addChildren(
       new Head({
         nodeName: 'h2',
-        text: '文本域',
+        text: '文本域'
       }),
       new P({
-        text: '用于输入多行文本信息可缩放的输入框。 添加 type="textarea" 属性来将 input 元素转换为原生的 textarea 元素。',
+        text: '用于输入多行文本信息可缩放的输入框。 添加 type="textarea" 属性来将 input 元素转换为原生的 textarea 元素。'
       }),
       new P({
         text: '文本域高度可通过 rows 属性控制', // todo not realized yet;
         styleObj: {
           fontSize: '0.875rem',
-          lineHeight: '1.25rem',
-        },
+          lineHeight: '1.25rem'
+        }
       }),
       new Example({
         showcase: [new FormInputTextareaExample()],
-        sourceWrapper: this.sourceData.textareaSource,
+        sourceWrapper: this.sourceData.textareaSource
       })
     );
   }
@@ -279,14 +280,14 @@ export class InputWrapper extends TypeDiv {
     this.addChildren(
       new Head({
         nodeName: 'h2',
-        text: '尺寸',
+        text: '尺寸'
       }),
       new P({
-        text: '使用 size 属性改变输入框大小。 除了默认大小外，还有另外两个选项： large, small。',
+        text: '使用 size 属性改变输入框大小。 除了默认大小外，还有另外两个选项： large, small。'
       }),
       new Example({
         showcase: [new FormInputSizeExample()],
-        sourceWrapper: this.sourceData.sizeSource,
+        sourceWrapper: this.sourceData.sizeSource
       })
     );
   }
