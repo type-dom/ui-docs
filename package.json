@@ -72,10 +72,10 @@
     "webpack-merge": "^5.9.0"
   },
   "dependencies": {
-    "@type-dom/framework": "^0.1.4",
-    "@type-dom/svgs": "^0.1.1",
-    "@type-dom/ui": "^0.0.4",
-    "@type-dom/utils": "^0.0.7"
+    "@type-dom/framework": "^0.1.11",
+    "@type-dom/svgs": "^0.1.7",
+    "@type-dom/ui": "^0.0.10",
+    "@type-dom/utils": "^0.0.13"
   },
   "repository": {
     "type": "git",
